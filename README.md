@@ -1,14 +1,11 @@
-# ts-boilerplate
+# garmin-scraper
 
-## Typescript project boilerplate
+Scrapes health stats from Garmin Connect
 
-### The boilerplate includes
+## How to run
 
-- `tsconfig.json` with recommended typescript rules
-- `.eslintrc.js` with recommended eslint rules
-- `.prettierrc.js` with recommended prettier config
-- `husky` pre-commit hook to lint with eslint
-- `npm run start:dev` script to start with nodemon and ts-node
-- `setting.json` with recommended vscode settings
-- `extensions.json` with recommended vs code extensions
-- `launch.json` with run dev command
+make sure you set `LOGIN_USER` and `LOGIN_PASSWORD` env vars before running. (can use .env file)
+
+```bash
+npm start
+```
