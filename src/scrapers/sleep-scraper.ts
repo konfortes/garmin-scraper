@@ -1,4 +1,5 @@
 import { Page } from 'puppeteer'
+// import { waitAndClick } from '../utils'
 
 export interface SleepStats {
     bedTime: string
@@ -6,9 +7,11 @@ export interface SleepStats {
 }
 
 export async function sleepScraper(page: Page): Promise<SleepStats> {
-    await page.click('i.icon-heart')
+    await page.waitFor('ul.main > li:nth-child(2)')
+    await page.click('ul.main > li:nth-child(2)')
+    await page.waitFor('a[href^="/modern/sleep/"]')
     await page.click('a[href^="/modern/sleep/"]')
-    const stats = await page.$eval('span.InlineEdit_label__cDTfw ', el => el.textContent)
+    const stats = await page.$eval('span.InlineEdit_label__cDTfw', el => el.textContent)
     return {
         bedTime: (stats || [])[0],
         wakeTime: (stats || [])[1],
