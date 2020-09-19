@@ -1,6 +1,7 @@
 require('dotenv').config()
 import { login } from './login'
-import { sleepScraper } from './scrapers/sleep-scraper'
+// import { sleepScraper } from './scrapers/sleep-scraper'
+import { hrScraper } from './scrapers/hr-scraper'
 import { default as puppeteer, Browser } from 'puppeteer'
 const DEBUG = process.env.NODE_ENV !== 'development'
 
@@ -13,8 +14,10 @@ const password = process.env.LOGIN_PASSWORD || ''
         await page.setViewport({ width: 1366, height: 768 })
 
         await login(page, user, password)
-        const sleepStats = await sleepScraper(page)
-        console.log(JSON.stringify(sleepStats, null, 4))
+        // const sleepStats = await sleepScraper(page)
+        // console.log(JSON.stringify(sleepStats, null, 4))
+        const hrStats = await hrScraper(page)
+        console.log(JSON.stringify(hrStats, null, 4))
     } catch (error) {
         console.error(error)
     } finally {
