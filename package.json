@@ -1,18 +1,18 @@
 {
-  "name": "ts-boilerplate",
+  "name": "garmin-scraper",
   "version": "1.0.0",
-  "description": "Typescript boilerplate project",
+  "description": "Garmin Connect stats scraper",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node ./dist/index.js",
-    "start:dev": "nodemon -e ts --exec 'ts-node --files ./index.ts",
+    "start:dev": "ts-node --files ./src/index.ts",
     "build": "tsc",
     "test": "npm t",
     "lint": "eslint --fix . --ext .ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/konfortes/ts-boilerplate.git"
+    "url": "git+https://github.com/konfortes/garmin-scraper.git"
   },
   "keywords": [
     "typescript",
@@ -23,9 +23,9 @@
   "author": "k7s",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/konfortes/ts-boilerplate/issues"
+    "url": "https://github.com/konfortes/garmin-scraper/issues"
   },
-  "homepage": "https://github.com/konfortes/ts-boilerplate#readme",
+  "homepage": "https://github.com/konfortes/garmin-scraper#readme",
   "devDependencies": {
     "@types/puppeteer": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
